@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>cells</key>
+	<array>
+		<dict>
+			<key>column</key>
+			<integer>1</integer>
+			<key>row</key>
+			<integer>1</integer>
+			<key>stringValue</key>
+			<string>ClrDrawAxesOff14→O–1→P0→A1→B10→S12→T1→J0→U0→V1→L1→M0→ELbl 1While 1B-A→B0→A2→D0→KWhile K≠21If K=25 and D=2:9→DIf K=34 and D=8:1→DIf K=25 and D&gt;2:D-1→DIf K=34 and D&lt;8:D+1→DIf O=7:1→PIf O=14:–1→PO+P→OClrHomeOutput(1,7,"[ PONG ]"Output(2,2,"Play"Output(3,2,"Array"Output(4,2,"Speed"Output(5,2,"Size"Output(6,2,"Jump"Output(7,2,"Help"Output(8,2,"Exit"Output(D,15,"["Output(D,O,"o"Output(D,1,"&gt;"getKey→KEndClrDrawClrHome0-(S/94)→Xmin:S+(S/94)→Xmax0-((T*2)/62)→Ymin:T+(T/62)→Ymax((T*2)/62)→Q
+(B-A)/2→Fint(S/2)-B→AA+B→B–1→MrandInt(1,2)→LIf L=1:–1→LIf L=2:1→LT→V0→ZrandInt(0,S)→U0→KIf D=2:ThenLine(A,0-Q,B,0-QPt-On(U,V,2)While K≠24 and K≠26getKey→KEndFor(C,0,9.9*10^99)getKey→KIf K=24 and A&gt;0:ThenA-J→A:B-J→BElseIf K=26 and B&lt;S:ThenA+J→A:B+J→BEndEndU+L→UV+M→VClrDrawLine(A,0-Q,B,0-QPt-On(U,V,2)If U≥S:Then–1→LElseIf U≤0:Then1→LEndEndIf V≥T:Then–1→MElseIf V≤0:ThenIf A&gt;U or B&lt;U:ThenText(–1,20,20,"Game Over")Text(–1,30,20,"Score: ",Z)While K≠21getKey→KEndGoto 1EndZ+1→Z1→MEndEndFor(C,0,E)EndEndElseIf D=3:ThenWhile K≠21If K≠0:ThenIf K=31:ThenClrHomeDisp "Both numbers"Disp "must be integers"Disp "greater than 0"Input "X=",HInput "Y=",IIf H&gt;0 and int(H)=H:H→SIf I&gt;0 and int(I)=I:I→T0→U1→VElseIf K=24 and S&gt;1:ThenS-1→SElseIf K=26:ThenS+1→SElseIf K=25:ThenT+1→TElseIf K=34 and T&gt;1:ThenT-1→TEndEndEndEndEnd0-(S/94)→Xmin:S+(S/94)→Xmax0-((T*2)/62)→Ymin:T+(T/62)→YmaxEndIf U≥S:Then–1→LElseIf U≤0:Then1→LEndEndIf V≥T:Then–1→MElseIf V≤0:Then1→MEndEndU+L→UV+M→VClrDrawText(0,0,S,",",TPt-On(U,V,2)getKey→KEndElseIf D=4:ThenFor(C,0,9.9*10^99)getKey→KIf K=31:ThenClrHomeDisp "The greater the"Disp "number"Disp "the slower the"Disp "speed.",""Disp "current speed:"Disp EInput "",I
+If I=int(I) and I≥0:I→EElseIf K=24 and E&gt;0:ThenE-1→EElseIf K=26:ThenE+1→EElseIf K=21:ThenGoto 1EndEndEndEndIf U≥S:Then–1→LElseIf U≤0:Then1→LEndEndIf V≥T:Then–1→MElseIf V≤0:Then1→MEndEndU+L→UV+M→VClrDrawText(0,0,E)Pt-On(U,V,2)Line(U-F,0-Q,U+F,0-Q)For(C,0,E)EndEndElseIf D=5:ThenFor(C,0,9.9*10^99)getKey→KIf K=31:ThenClrHome
+Disp "Minimum size:"Disp 0
+Disp "Maximum size:"Disp S
+Disp "current size:"Disp 2FInput "",H
+If H≥0 and H≤S:H/2→F
+If F&lt;0:F=0ElseIf K=24 and F&gt;0:ThenF-.05→FElseIf K=26 and 2F&lt;S:ThenF+.05→FElseIf K=21:Then
+0→A
+2F→BGoto 1EndEndEndEndIf U≥S:Then–1→LElseIf U≤0:Then1→LEndEndIf V≥T:Then–1→MElseIf V≤0:Then1→MEndEndU+L→UV+M→VClrDrawText(0,0,2F)Pt-On(U,V,2)
+If (U-F)&lt;0:Then
+Line(0,0-Q,2F,0-Q)
+Else
+If (U+F)&gt;S:Then
+Line(S-2F,0-Q,S,0-Q)
+ElseLine(U-F,0-Q,U+F,0-Q)
+End
+EndEndElseIf D=6:Then
+For(C,0,9.9*10^99)
+getKey→KIf K=31:ThenClrHome
+Disp "Positive real"
+Disp "number"
+Disp "current Jump:"Disp abs(J)Input "",H
+If H≥0:Then
+H→J
+0→A
+2F→B
+EndElseIf K=24 and J&gt;0:ThenJ-.05→J
+If J&lt;0:0→JElseIf K=26:ThenJ+.05→JElseIf K=21:Then
+abs(J)→JGoto 1EndEndEndEnd
+If I&lt;0:0-J→I
+If I≥0:J→IIf B≥S:Then0-J→IElseIf A≤0:ThenJ→IEndEnd
+A+I→A
+B+I→B
+ClrDraw
+Line(A,0-Q,B,0-Q)
+Text(0,0,J)
+EndElseIf D=7:Then
+Disp "This feature"
+Disp "is currently"
+Disp "unavailable"
+While K≠21
+getKey→K
+EndElseIf D=8:ThenClrHomeStopPause EndEndEndEndEndEndEndEnd</string>
+		</dict>
+	</array>
+	<key>device name</key>
+	<string>PONG2</string>
+	<key>device type</key>
+	<string>TI-83 Plus</string>
+	<key>isProtected</key>
+	<false/>
+	<key>object type</key>
+	<string>Program</string>
+</dict>
+</plist>

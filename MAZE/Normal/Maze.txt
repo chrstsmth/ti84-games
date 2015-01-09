@@ -1,0 +1,54 @@
+lrHome
+Input "SPEED:",F
+AxesOff
+–10→Xmin
+10→Xmax
+–10→Ymin
+10→Ymax
+Line(–10,–10,10,–10)
+Line(–10,–10,–10,10)
+Line(10,10,–10,10)
+Line(10,10,10,–10)
+Lbl 1
+DelVar D
+DelVar E
+DelVar A
+DelVar B
+DelVar S
+DelVar R
+0→D
+0→E
+31→A
+5→B
+For(S,0,9.9*10^99)
+For(R,0,F)
+End
+Pxl-Off(A,B)
+A+D→A
+B+E→B
+If pxl-Test(A,B)=1:Goto 2
+Pxl-On(A,B)
+getKey→K
+If K=24:Then
+–1→E:0→D
+Else
+If K=26:Then
+1→E:0→D
+Else
+If K=25:Then
+–1→D:0→E
+Else
+If K=34:Then
+1→D:0→E
+End
+End
+End
+End
+End
+Lbl 2
+ClrHome
+Output(4,3,round(B/94*100,1))
+Output(4,8,"PERCNT"
+Pause 
+Goto 1
+End

@@ -1,0 +1,103 @@
+Lbl 9
+AxesOff
+5→A:7→B:1.5→Q:1→L:1→M:12→S:10→T
+Lbl 1
+0→V
+Menu("Pong","Play",2,"Paddle Size",3,"Paddle Speed",4,"Array",6,"Reset",7,"Exit",8)
+Lbl 3
+ClrHome
+0→A
+Prompt B
+Goto 1
+Lbl 4
+ClrHome
+Prompt Q
+Goto 1
+Lbl 5
+ClrHome
+Goto 1
+Lbl 6
+ClrHome
+Input "X=",S
+Input "Y=",T
+If S≤0≤0:Then
+ Disp "X and Y must be greater than 0"
+Pause 
+Goto 6
+End
+Goto 1
+Lbl 7
+Goto 9
+Lbl 8
+AxesOn
+Stop
+Lbl 2
+ClrDraw
+randInt(1,S-1)→D
+T-0.7→E
+randInt(1,2)→I
+randInt(3,4)→J
+0→Xmin
+S→Xmax
+0→Ymin
+T→Ymax
+Line(A,0,B,0)
+Pt-On(D,E,2)
+While G!=24 and G!=26 and G!=34
+getKey→G
+End
+1→L
+For(X,1,10000000000000000000000000000)
+getKey→G
+If G=24 and A>0
+Then
+A-Q→A:B-Q→B
+Else
+If G=26 and B<S
+Then
+A+Q→A:B+Q→B
+End
+End
+If J=3
+Then
+If E≤0.3
+Then
+If A≤D and B≥D
+Then
+4→J
+E+M→E
+V+1→V
+Else
+E-M→E
+ClrDraw
+Pt-On(D,0,2)
+Line(A,0,B,0)
+Text(–1,20,20,"GAME OVER")
+Text(–1,30,25,"SCORE ",V)
+Pause 
+Goto 1
+End
+Else
+E-M→E
+End
+Else
+If E≥T-0.7:Then
+3→J:E-M→E
+Else:E+M→E
+End
+End
+If I=1:Then
+If D≤0:Then
+2→I:D+L→D
+Else
+D-L→D
+End
+Else
+If D=S:Then
+1→I:D-L→D
+Else:D+L→D
+End
+End
+ClrDraw
+Pt-On(D,E,2:Line(A,0,B,0
+End

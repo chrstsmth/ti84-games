@@ -1,0 +1,98 @@
+ClrDraw
+ClrHome
+Disp ".05"
+Input "XA",W
+Disp ".05"
+Input "YA",L
+Disp ".98"
+Input "XF",H
+Disp "1"
+Input "YF",M
+Input "XBF",P
+Input "YBF",J
+Disp "0"
+Input "XG",V
+Disp "0.02"
+Input "YG",Z
+AxesOff
+0→Xmin
+94→Xmax
+0→Ymin
+62→Ymax
+For(S,0,3)
+Vertical 0+S
+Vertical 94-S
+Horizontal 0+S
+Horizontal 62-S
+End
+While K≠105
+Pxl-On(randInt(0,62),randInt(0,94))
+getKey→K
+End
+Lbl 1
+DelVar D
+DelVar E
+DelVar A
+DelVar B
+DelVar S
+DelVar R
+0→D
+0→E
+31→F
+5→G
+31→A
+5→B
+For(S,0,9.9*10^99)
+(D*M)+Z→D
+(E*H)+V→E
+Pxl-Off(A,B)
+If pxl-Test(A,int(E+G))=1 and pxl-Test(int(F+D),B)=1:Then
+–P*D→D:–J*E→E
+(D*M)+Z→D
+(E*H)+V→E
+Else
+If pxl-Test(int(F+D),B)=1:Then
+(–P*D)→D
+(D*M)+Z→D
+Else
+If pxl-Test(A,int(E+G))=1:Then
+(–J*E)→E
+(E*H)+V→E
+Else
+If pxl-Test(int(F+D),int(E+G))=1:Then
+J→I
+P→O
+If E=abs(E):–J→I
+If D=abs(D):–P→O
+D→U
+E→D:U→E
+O*abs(D)→D:I*abs(E)→E
+(D*M)+Z→D
+(E*H)+V→E
+End
+End
+End
+End
+(D+F)→F
+(E+G)→G
+int(F)→A
+int(G)→B
+Pxl-On(A,B)
+getKey→K
+If K=24:Then
+E-W→E
+Else
+If K=26:Then
+E+W→E
+Else
+If K=25:Then
+D-L→D
+Else
+If K=34:Then
+D+L→D
+End
+End
+End
+End
+End
+End

@@ -1,0 +1,272 @@
+Lbl 6
+AxesOff
+ClrDraw
+
+84→S
+42→T
+0→K
+0→Xmin:94→Xmax
+0→Ymin:62→Ymax
+Line(0,50,94,50
+Line(0,4,94,4
+Line(0,4,0,50
+Line(94,4,94,50
+Line(88,4,88,50
+Line(37,4,37,50
+Text(–1,0,0,"[FALLING  PIXEL]
+Text(–1,16,7,"Play
+Text(–1,32,7,"About
+Text(–1,48,7,"Exit
+Text(–1,16,1,">
+
+While (K≠105 and K≠21)
+S→X
+T→Y
+S-1→S
+getKey→K
+If K=34:Then
+T-1→T
+If T<5:Then
+49→T
+Text(–1,48,1," 
+Text(–1,16,1,">
+Else
+If T=34:Then
+Text(–1,16,1," 
+Text(–1,32,1,">
+Else
+If T=17:Then
+Text(–1,32,1," 
+Text(–1,48,1,">
+End
+End
+End
+
+End
+If K=25:Then
+T+1→T
+If T>49:Then
+5→T
+Text(–1,16,1," 
+Text(–1,48,1,">
+Else
+If T=18:Then
+Text(–1,48,1," 
+Text(–1,32,1,">
+Else
+If T=35:Then
+Text(–1,32,1," 
+Text(–1,16,1,">
+End
+End
+End
+End
+If S<38:84→S
+Pt-Off(X,Y)
+Pt-On(S,T)
+End
+
+
+If T<48 and T>35:Goto 1
+If T<34 and T>18:Goto 5
+If T<17 and T>5:Goto 7
+
+Lbl 1
+0→L
+0→K
+2→F
+94→A
+0→B
+94→D
+62→E
+ClrDraw
+AxesOff
+0→Xmin:94→Xmax
+0→Ymin:62→Ymax
+Vertical 94
+Vertical 87
+For(C,0,94)
+Pt-On(A,B)
+Pt-On(D,E)
+A-1→A
+D-1→D
+End
+Vertical 0
+
+
+Lbl 2
+L+1→L
+For(C,1,10)
+randInt(1,61)→S
+randInt(1,80)→T
+If pxl-Test(S,T)=1:Then
+C-1→C
+Else
+Pt-On(T,S)
+End
+End
+If (L/10)<1:Then
+Text(2,90,L
+Else
+Text(2,90,L
+Text(10,90,(((L/10)-int(L/10)))*10)
+End
+If F=2:Then
+84→X
+31→Y
+0→G
+While G≠24
+getKey→G
+Pt-On(X,Y,2)
+While G=34 and Y>2
+getKey→G
+Pt-Off(X,Y+1
+Pt-Off(X+1,Y+1)
+Pt-Off(X-1,Y+1)
+Y-1→Y
+Pt-On(X,Y,2
+Pt-Off(X,Y)
+End
+While G=25 and Y<60
+getKey→G
+Pt-Off(X,Y-1)
+Pt-Off(X+1,Y-1)
+Pt-Off(X-1,Y-1)
+Y+1→Y
+Pt-On(X,Y,2
+Pt-Off(X,Y
+End
+End
+For(X,83,2,–1)
+getKey→G
+If G=25 and Y<60:Then
+If pxl-Test(62-Y,X-1)=161-Y,X-1)=160-Y,X-1)=160-Y,X)=160-Y,X+1)=1:Then
+Goto 3
+Pause 
+End
+Pt-Off(X+2,Y-1
+Pt-Off(X+2,Y
+Pt-Off(X+1,Y-1
+Pt-Off(X+2,Y+1
+Pt-Off(X,Y-1
+Y+1→Y
+Pt-On(X,Y,2
+Else
+If G=34 and Y>2
+Then
+If pxl-Test(62-Y,X-1)=163-Y,X-1)=164-Y,X-1)=164-Y,X)=164-Y,X+1)=1:Then
+Goto 3
+Pause 
+End
+Pt-Off(X+2,Y+1
+Pt-Off(X+2,Y
+Pt-Off(X+1,Y+1
+Pt-Off(X+2,Y-1
+Pt-Off(X,Y+1
+Y-1→Y
+Pt-On(X,Y,2
+Else
+If pxl-Test(62-Y,X-1)=161-Y,X-1)=163-Y,X-1)=1:Then
+Goto 3
+End
+Pt-Off(X+2,Y
+Pt-Off(X+2,Y+1
+Pt-Off(X+2,Y-1
+Pt-On(X,Y,2
+End
+End
+End
+Pt-Off(X+2,Y+1
+Pt-Off(X+2,Y
+Pt-Off(X+2,Y-1
+Pt-Off(X+1,Y+1
+Pt-Off(X+1,Y
+Pt-Off(X+1,Y-1
+Pt-Off(X,Y+1
+Pt-Off(X,Y
+Pt-Off(X,Y-1
+Goto 2
+Else
+84→X
+84→H
+31→Y
+0→G
+While G≠24
+getKey→G
+Pt-On(X,Y)
+While G=25 and Y<61
+getKey→G
+Y+1→Y
+Pt-Off(X,Y-1
+Pt-On(X,Y
+End
+While G=34 and Y>1
+getKey→G
+Y-1→Y
+Pt-Off(X,Y+1
+Pt-On(X,Y
+End
+End
+Pt-Off(X,Y
+Lbl 4
+For(X,H,1,–1
+getKey→G
+X+1→U
+Y→V
+If G=25 and Y<61:Y+1→Y
+If G=34 and Y>1:Y-1→Y
+If pxl-Test(62-Y,X)=1:Then
+(L-1)*81+83-X→D
+If X≠84:Then
+Text(–1,25,18,"GAME OVER"
+Text(–1,35,15,"SCORE:",D
+Pause 
+Goto 6
+End
+End
+Pt-Off(U,V
+Pt-On(X,Y
+End
+Pt-Off(X+1,Y
+Goto 2
+
+
+Lbl 3
+X→A
+X→H
+1→F
+For(C,1,7)
+For(I,1,250
+End
+Pt-Change(X+2,Y+1
+Pt-Change(X+2,Y
+Pt-Change(X+2,Y-1
+Pt-Change(X+1,Y+1
+Pt-Change(X+1,Y-1
+Pt-Change(X,Y+1
+Pt-Change(X,Y
+Pt-Change(X,Y-1
+End
+For(I,1,20)
+End
+0→G
+Goto 4
+
+Lbl 5
+ClrDraw
+Text(0,0,"[FALLING  PIXEL   by  65piano]
+Text(9,0,"You have two lives to get from
+Text(15,0,"one end to the other without
+Text(21,0,"colliding with any pixels.
+Text(30,0,"Control with the arrow keys
+Text(36,0,"and hold the calc sideways.
+Text(45,0,"contact me at:
+Text(51,0,"unicycle_trials@yahoo.com
+Pause 
+
+Goto 6
+
+Lbl 7
+AxesOn
+ClrDraw
+ClrHome

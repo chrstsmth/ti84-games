@@ -1,48 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
-<dict>
-	<key>cells</key>
-	<array>
-		<dict>
-			<key>column</key>
-			<integer>1</integer>
-			<key>row</key>
-			<integer>1</integer>
-			<key>stringValue</key>
-			<string>ClrHomeInput "Speed:",F
-Input "Maze Spead:",IAxesOff–10→Xmin10→Xmax–10→Ymin10→YmaxLine(–10,–10,10,–10)Line(–10,–10,–10,10)Line(10,10,–10,10)Line(10,10,10,–10)Lbl 1DelVar DDelVar EDelVar ADelVar BDelVar SDelVar R
-DelVar V0→D0→E31→A5→BFor(S,0,9.9*10^99)For(R,0,F)EndPxl-Off(A,B)
-If V=I:Then
-ClrDraw
-RecallPic 1
-Else
-If V=2I:Then
-ClrDraw
-RecallPic 2
-Else
-If V=3I:Then
-ClrDraw
-RecallPic 3
-Else
-If V=4I:Then
-ClrDraw
-RecallPic 4
-0→V
-End
-End
-End
-EndA+D→AB+E→BIf pxl-Test(A,B)=1:Goto 2Pxl-On(A,B)getKey→KIf K=24:Then–1→E:0→DElseIf K=26:Then1→E:0→DElseIf K=25:Then–1→D:0→EElseIf K=34:Then1→D:0→EEndEndEndEnd
-V+1→VEndLbl 2ClrHomeOutput(4,3,round(B/94*100,1))Output(4,8,"PERCNT"Pause Goto 1End</string>
-		</dict>
-	</array>
-	<key>device name</key>
-	<string>MOVINGPRTS</string>
-	<key>device type</key>
-	<string>TI-83 Plus</string>
-	<key>isProtected</key>
-	<false/>
-	<key>object type</key>
-	<string>Program</string>
-</dict>
-</plist>
